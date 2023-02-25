@@ -1,0 +1,23 @@
+<form action="/getform/" method="POST">  <!-- this is the form that will be sent to the server
+     the action attribute specifies the URL to send the form data to the url is /myapp/getform.
+     the method attribute specifies the HTTP method to use when sending the form data.
+     the method attribute can be either GET or POST.
+     GET is used when the form data is sent to the server in the URL.
+     POST is used when the form data is sent to the server in the HTTP request body.
+-->
+    {% csrf_token %} <!-- this is a hidden field, used to prevent CSRF attacks, Csrf attack is a type of attack
+     where a malicious user can trick a user into performing an action on a website that the user is currently logged into.
+     for example a user can trick a user into sending money to a malicious user as follows:
+     1. the malicious user creates a form that looks like the form of the website the user is currently logged into
+     2. the malicious user sends the user a link to the form
+     3. the user clicks on the link and is taken to the malicious form
+     4. the user fills out the form and submits it
+     5. the malicious form sends the user's money to the malicious user
+     SO , writting {% csrf_token %} in the form will prevent this attack by adding a hidden field to the form
+     so attacker can't trick the user into sending money to him because the user will not see the hidden field
+
+    -->
+        <p>Name: <input type="text" name="id"></p> 
+        <p>UserID :<input type="name" name="name"></p> 
+        <input type="submit"> 
+    </form> 
